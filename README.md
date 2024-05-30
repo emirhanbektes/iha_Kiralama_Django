@@ -19,7 +19,7 @@
 
 9- CMD ile iha klasörünün içerisinde python manage.py makemigrations çalıştırınız. Ardından python manage.py migrate yi çalıştırınız. Böylece veritabanına otomatik tablolar oluşturulmuştur. 
 
-10- CMD ile iha klasörünün içerisinde python manage.py runserver çalıştıradak uygulama URL ine http://127.0.0.1:8000/ geçiş yapabilirsiniz. 
+10- CMD ile iha klasörünün içerisinde python manage.py runserver çalıştıradak uygulama URL ine http://127.0.0.1:8000/ geçiş yapabilirsiniz. (  Not : eğer django rest framework hatası alınırsa pip kurulumu djangorestframework kurulumunu yapınız ardından tekrar runserver'ı çalıştırınız.) 
 
 Anasayfa 
 ![image](https://github.com/emirhanbektes/iha_Kiralama_Django/assets/112666438/4c8e24c5-b1a6-4aef-ba54-3bbe00a2fe0a)
