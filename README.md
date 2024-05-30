@@ -58,4 +58,4 @@ Müşteri kiralayacağı tarihleri seçerek kiralar ve Müşteri Envanter takibi
 ![image](https://github.com/emirhanbektes/iha_Kiralama_Django/assets/112666438/53d0dcee-9ec5-4c22-a870-4a8ae6db060a) kullanıcı kiralam işlemini silebilir. veya tarihleri değiştirebilmektedir. 
 
 
-tarih güncelleme işlemi zaman yetmediği için yapılamamıştır. 
+
