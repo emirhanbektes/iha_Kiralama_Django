@@ -1,0 +1,32 @@
+{% for product in products %}
+    <div class="card">
+        <h5 class="card-header">{{ product.category }}</h5>
+        <div class="card-body">
+            <div class="mb-3">
+                <h5 class="card-title">{{ product.title }}</h5>
+                <p class="card-text">{{ product.description }}</p>
+                <p class="card-text">Tarih: {{ product.date }}</p>
+                <p class="card-text">Ağırlık (kg): {{ product.weight }}</p>
+                <form action="{% url 'rent_product' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="user" value="{{ user.id }}">
+                    <input type="hidden" name="product" value="{{ product.id }}">                     
+                    <label for="startdate">Başlangıç Tarihi:</label>
+                    <input type="date" id="startdate" name="startdate" required>
+                    <label for="stopdate">Bitiş Tarihi:</label>
+                    <input type="date" id="stopdate" name="stopdate" required>
+                    <button type="submit" class="btn btn-primary">Kirala</button>
+                </form>
+                {% if errors %}
+                    <ul class="errorlist">
+                        {% for field, error_list in errors.items %}
+                            {% for error in error_list %}
+                                <li>{{ field }}: {{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endfor %}

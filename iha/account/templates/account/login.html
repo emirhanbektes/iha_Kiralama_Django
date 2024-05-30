@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="form-Data">
+    <div class="row">
+        <div class="col-12">
+
+            <h1 class="login-header">LOGIN</h1>
+            <hr>
+
+            <form method="post" novalidate>
+                {% csrf_token %}
+                {% if error %}
+                    <div class="alert alert-danger">
+                        {{ error }}                    
+                    </div>
+                {% endif %}
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" name="username" id="username" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" name="password" id="password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <a class="btn btn-warning" href="{% url 'user_register' %}">Sign Up</a>
+            </form>
+
+            
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+.bg-body-tertiary {
+    --bs-bg-opacity: 1;
+    background-color: rgb(131 139 148) ;
+}
+
+.img-bg-custom {
+    background-color: rgb(131, 139, 148); /* Gri renk */
+    border-radius: 50%; /* Elips şekli için */
+    padding: 10px; /* Görüntünün etrafında boşluk bırakmak için */
+}

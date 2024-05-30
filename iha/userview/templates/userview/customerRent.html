@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+    .user {
+        margin-top: 5%;
+        margin-left: 10%;
+        margin-right: 50%;
+    }
+    .newproduct {
+        margin-top: 5%;
+        margin-left: 10%;
+    }
+
+    .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 20px; /* Kartlar arasındaki boşluk */
+        margin-top: 5%;
+        margin-left: 10%;
+        margin-right: 10%; 
+    }
+
+    .filter {
+        margin-top: 5%;
+        margin-left: 10%;
+        margin-right: 80%;
+    }
+
+    .card {
+        flex: 1 1 calc(50% - 20px); /* Her kartın genişliği ve kartlar arasındaki boşluk */
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+
+    .card-header {
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .card-title {
+        margin-bottom: 10px;
+    }
+
+    .card-text {
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        margin-right: 10px;
+    }
+    
+</style>
+    
+<div class="user">
+    
+        <div class="card text-bg-light mb-3" style="max-width: 50rem;">
+            <div class="card-header">HOŞGELDİN  {{ user.username }}</div>
+            <div class="card-body">
+            <h5 class="card-title">Kiralanan Envanter Takip Modülü</h5>
+            <p class="card-text">Bu bölünde kiralanan araçlara ilişkin kiralama tarihi ve ürün bilgileri yer almaktadır. Kiralama tarihini uzatabilir ve kiralamayı iptal edebilirsiniz. </p>
+            </div>
+        </div>
+    
+</div>
+<div class="filter">
+    <!-- Filtreleme formunu buraya ekleyin -->
+</div>
+
+<div class="cards-container">
+    {% include 'userview/rentProducts.html' %}
+</div>
+
+{% endblock %}

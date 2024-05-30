@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+    .newproduct {
+        margin-top: 5%;
+        margin-left: 10%;
+    }
+
+    .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; /* Kartlar arasındaki boşluk */
+        margin-top: 5%;
+        margin-left: 10%;
+        margin-right: 10%; 
+    }
+
+    .filter {
+        margin-top: 2%;
+        margin-left: 10%;
+        margin-right: 80%;
+    }
+
+    .card {
+        flex: 1 1 calc(50% - 20px); /* Her kartın genişliği ve kartlar arasındaki boşluk */
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+
+    .card-header {
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .card-title {
+        margin-bottom: 10px;
+    }
+
+    .card-text {
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        margin-right: 10px;
+    }
+</style>
+
+
+
+    <div class="newproduct">
+        <a href="{% url "add_category" %}"type="button" class="btn btn-success">Kategori Ekle</a>
+        <a href="{% url "add_product" %}"type="button" class="btn btn-success">Ürün Ekle</a>
+    </div>
+
+
+    <div class="filter">
+        <form method="get" action="{% url 'updateProduct' %}">
+            <div class="form-group">
+                <label for="category">Kategoriye Göre Filtrele:</label>
+                <select name="category" id="category" class="form-control">
+                    <option value="">Tüm Kategoriler</option>
+                    {% for category in categories %}
+                        <option value="{{ category.id }}">{{ category.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Filtrele</button>
+        </form>
+    </div>
+    <div class="cards-container">
+        {% include 'product/product_cards.html' %}
+    </div>
+    
+
+
+{% endblock %}
+
+

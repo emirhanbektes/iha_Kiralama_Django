@@ -1,0 +1,14 @@
+.form-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2000; /* Formun diğer öğelerin önünde olmasını sağlar */
+}
+spline-viewer {
+    position: absolute;
+    top: 0; /* Place at the top of the viewport */
+    left: 0; /* Place at the left of the viewport */
+    width: 100%; /* Span the entire width */
+    height: 100%; /* Span the entire height */
+}

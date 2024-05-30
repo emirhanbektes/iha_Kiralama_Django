@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'dist/style.css' %}">
+{% block content %}
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-9">
+           
+
+        </div>
+    </div>
+</div> 
+<script type="module" src="https://unpkg.com/@splinetool/viewer@1.4.4/build/spline-viewer.js"></script>
+<spline-viewer url="https://prod.spline.design/bgo0uPEgdNNdt1q4/scene.splinecode"></spline-viewer>
+
+{% endblock %}

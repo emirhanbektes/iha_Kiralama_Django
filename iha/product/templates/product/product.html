@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+.newproduct {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+}
+</style>
+
+<div class="newproduct">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Kaydet">
+    </form>
+</div>
+
+{% endblock content %}

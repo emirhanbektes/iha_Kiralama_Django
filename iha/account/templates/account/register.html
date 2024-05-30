@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% load static %}
+
+
+{% block content %} 
+
+<style>
+.login{
+    position: absolute;
+    top: 30%;
+    left: 40%;    
+    width: 400px; /* veya istediğiniz genişlik */
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+</style>
+<div class = "login">  
+         
+     
+  
+    <h1>Sign - UP</h1>
+    <form method="POST" action="" novalidate>
+        {% csrf_token %}
+        {% if form.errors %}
+        <div class="alert alert-danger" role="alert">
+            {% for field, errors in form.errors.items %}
+                {% for error in errors %}
+                    {{ error }}
+                {% endfor %}
+            {% endfor %}
+        </div>
+        {% endif %}
+        <h5>{{ form.username.label }}</h5>
+        {{ form.username }}
+        <h5>{{ form.email.label }}</h5>
+        {{ form.email }}
+        <h5>{{ form.password1.label }}</h5>
+        {{ form.password1 }}
+        <h5>{{ form.password2.label }}</h5>
+        {{ form.password2 }}
+        <input type="submit" value="Create User">
+    </form>
+</div>  
+  
+{% endblock content %}  
